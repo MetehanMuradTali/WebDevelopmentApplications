@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <b>Todo Uygulaması</b>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" id="txtTaskName" class="form-control">
+                                <button type="submit" class="btn btn-primary" id="btnAddNewTask">
+                                    Ekle
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <button id="btnClear" class="btn btn-danger btn-sm float-end">Temizle</button>
+                    </div>
+                    <ul id="task-list" class="list-group list-group-flush">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        let gorevListesi = [{
+            "id": 1,
+            "gorevAdi": "Görev 1"
+        }, {
+            "id": 2,
+            "gorevAdi": "Görev 2"
+        }, {
+            "id": 3,
+            "gorevAdi": "Görev 3"
+        }, {
+            "id": 4,
+            "gorevAdi": "Görev 4"
+        }, ];
+        let editId;
+        let isEditTask = false;
+        const eklenecek_gorev = document.getElementById("txtTaskName")
+        const silme_Butonu = document.getElementById("btnClear")
+
+        //Gorev Ekleme
+
+        function gorevleri_goster() {
+            let ul = document.getElementById("task-list");
+            ul.innerHTML = "";
+            for (let gorev of gorevListesi) {
+                let li = `
+                <li class="task list-group-item">
+                        <div class="form-check">
+                            <input type="checkbox" id="${gorev.id}" class="form-check-input ">
+                            <label for="${gorev.id}" class="form-check-label">${gorev.gorevAdi}</label>
+                            <i  onclick="gorev_sil(${gorev.id})" class="btn btn-danger float-end" id="btn-sil-${gorev.id}">
+                                    Sil
+                            </i>
+                            <i  onclick='gorev_guncel(${gorev.id},"${gorev.gorevAdi}")' class="btn btn-success float-end" id="btn-guncel-${gorev.id}">
+                                    Guncelle
+                            </i>
+                            
+                        </div>
+                </li>
+                `;
+                ul.insertAdjacentHTML("beforeend", li)
+            }
+        }
+        gorevleri_goster()
+
+        let btnEkle = document.getElementById("btnAddNewTask");
+        btnEkle.addEventListener("keypress", function() {
+            if (event.key == "Enter") {
+                document.getElementById("btnAddNewTask").click();
+            }
+        })
+        btnEkle.addEventListener("click", function() {
+            event.preventDefault();
+            if (eklenecek_gorev.value == "") {
+                alert("Lutfen Gorev Giriniz")
+            } else {
+                if (!isEditTask) {
+                    //ekleme
+                    gorevListesi.push({
+                        "id ": gorevListesi.length + 1,
+                        "gorevAdi": eklenecek_gorev.value
+                    })
+                } else {
+                    //guncelleme
+                    for (let gorev of gorevListesi) {
+                        if (gorev.id == editId) {
+                            gorev.gorevAdi = eklenecek_gorev.value
+                        }
+                        isEditTask = false
+                    }
+                }
+                eklenecek_gorev.value = ""
+                gorevleri_goster()
+            }
+        })
+
+        //Gorev Ekleme Bitiş
+        //Silme 
+
+        let silinecek_index = 0
+
+        function gorev_sil(id) {
+            for (let index in gorevListesi) {
+                if (id == gorevListesi[index].id) {
+                    silinecek_index = index
+                }
+            }
+            gorevListesi.splice(silinecek_index, 1)
+            gorevleri_goster()
+        }
+
+        //Silme Bitiş
+        //Guncelleme
+
+        function gorev_guncel(gorev_id, gorev_Adi) {
+            editId = gorev_id
+            isEditTask = true
+            eklenecek_gorev.value = gorev_Adi
+            eklenecek_gorev.focus()
+            eklenecek_gorev.classList.add("active")
+
+        }
+
+        //Guncelleme Bitiş
+        //Hepsini Silme
+        silme_Butonu.addEventListener("click", function() {
+            gorevListesi.splice(0, gorevListesi.length)
+            gorevleri_goster();
+        })
+
+        //Hepsini Silme Bitiş
+    </script>
+</body>
+
+</html>

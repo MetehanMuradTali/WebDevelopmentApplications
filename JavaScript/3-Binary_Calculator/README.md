@@ -4,7 +4,7 @@
 <h3>Objective</h3>
 
 In this challenge, we implement a calculator that uses binary numbers. 
-!["img 0"](/img/0.png "BinaryCalculatorImg0");
+!["img 0"](img/0.png "BinaryCalculatorImg0");
 
 <h3>Constraints</h3>
 
@@ -20,11 +20,11 @@ Consider the following sequence of button clicks:
 
 Before pressing the **=** button, the result div looks like this:
 
-!["img 0"](/img/1.png "BinaryCalculatorImg0");
+!["img 0"](img/1.png"BinaryCalculatorImg0");
 
 After pressing the **=** button, the result div looks like this:
 
-!["img 0"](/img/2.png "BinaryCalculatorImg0");
+!["img 0"](img/2.png "BinaryCalculatorImg0");
 
 Notice that (11011)<sub>2</sub> = (27)<sub>10</sub> , (1000)<sub>2</sub> = (8)<sub>10</sub> , and  (100011)<sub>2</sub> = (35)<sub>10</sub> so our calculator evaluated the expression correctly.
 
@@ -34,11 +34,11 @@ Now, let's consider our next sequence of button clicks as:
 
 Before pressing the **=** button, the result div looks like this:
 
-!["img 0"](/img/3.png "BinaryCalculatorImg0");
+!["img 0"](img/3.png "BinaryCalculatorImg0");
 
 After pressing the **=** button, the result div looks like this:
 
-!["img 0"](/img/4.png "BinaryCalculatorImg0");
+!["img 0"](img/4.png "BinaryCalculatorImg0");
 
 Consider the next sequence of button clicks as:
 
@@ -46,7 +46,7 @@ Consider the next sequence of button clicks as:
 
 The result div looks like this:
 
-!["img 0"](/img/5.png "BinaryCalculatorImg0");
+!["img 0"](img/5.png "BinaryCalculatorImg0");
 
 [*The source is from HackerRank*
 ](https://www.hackerrank.com/challenges/js10-binary-calculator)

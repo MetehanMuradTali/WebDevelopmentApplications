@@ -1,0 +1,26 @@
+body{
+    font-family:sans-serif;
+  }
+  header{
+    text-align:center;
+  }
+  img {
+  display:block;
+  }
+  #image{
+    max-width:100%;
+    text-align:center;
+    margin:0 auto;
+  }
+  figcaption {
+   margin-top:1em;
+   text-align:center;
+  }
+  footer {
+    text-align:center;
+  }
+  h3 {  text-align:center;
+  }
+  li{
+    margin-top:1rem;
+  }

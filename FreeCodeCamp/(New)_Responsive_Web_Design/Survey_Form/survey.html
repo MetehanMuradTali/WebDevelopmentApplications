@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Form</title>
+  </head>
+  <body>
+    <main>
+      <h1 id="title">Membership Form</h1>
+      <p id="description">Please provide the informations correctly.</p>
+      <section>
+        <form id="survey-form" action="" method=post>
+          <fieldset class="fields">
+            <label for="name" id="name-label">Name <input class="text" id="name" type="text" placeholder="Your Name" required></label>
+            <label for="email" id="email-label">Email <input class="text" id="email" type="email" placeholder="Your Email" required></label>
+            <label for="number" id="number-label">Age <input class="text" id="number" type="number" min="18" max="64" placeholder="Your Age" required></label>
+          </fieldset>
+          <fieldset class="fields">
+            <label>Gender <select id="dropdown" required>
+                <option value="">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option></label>
+            </select>
+          </fieldset>
+          <fieldset class="fields">
+            <label>Options
+          <input type="radio" value="a" name="radio">a</input>
+          <input type="radio" value="b" name="radio">b</input>
+          </label>
+            </fieldset>
+          <fieldset class="fields">
+            <label>Options
+              <input type="checkbox" value="1">1</input>
+              <input type="checkbox" value="2">2</input>
+            </label>
+          </fieldset>
+          <fieldset class="fields">
+          <textarea rows="5" placeholder="About You"></textarea>
+          </fieldset>
+          <fieldset class="fields">
+            <input type="submit" id ="submit" value="Submit">
+          </fieldset>
+          
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

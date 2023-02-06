@@ -1,0 +1,250 @@
+:root{
+    --white: #f0f0f0;
+    --red: #be3144;
+    --blue: #45567d;
+    --gray: #303841;
+}
+*,::before,::after{
+  margin:0;
+  padding:0;
+}
+html{
+  box-sizing:border-box;
+  font-size:62.5%;
+  overflow-X:hidden;
+  scroll-behavior:smooth;
+}
+
+/*nav */
+#navigation{
+  width:100vw;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  position:sticky;
+  top:0;
+  background-color:var(--red);
+  height:6rem;
+}
+nav a{
+  color:var(--white);
+  text-decoration:none;
+  font-size:2rem;
+  padding:2rem 3rem;
+}
+nav a:hover{
+  background-color:var(--gray);
+}
+/*nav */
+
+/*welcome-section */
+
+#welcome-section{
+  width:100vw;
+  height:100vh;
+  background-color:var(--gray);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:var(--white);
+}
+#welcome-section h1{
+  font-size:6rem;
+}
+#welcome-section p{
+  font-size:3.3rem;
+  color:var(--red);
+  font-style:italic;
+}
+/*welcome-section */
+
+/*projects */
+#projects{
+  background-color:var(--blue);
+  padding-bottom:8rem;
+}
+.projects-header{
+  font-size:4rem;
+  margin:0 auto;
+  padding-top:7rem;
+  margin-bottom:5rem;
+  text-align:center;
+  border-bottom:var(--white) 0.3rem solid;
+  color:var(--white);
+  width:55rem;
+}
+.project-grid{
+  display:grid;
+  grid-template-columns:min-content min-content min-content;
+  gap:4rem;
+  justify-content:center;
+  margin:0 auto;
+}
+img{
+  width:34rem;
+  height:37rem;
+}
+.project-tile a{
+  text-decoration:none;
+}
+
+.project-tile p{
+  background-color:var(--gray);
+  font-size:2.3rem;
+  text-align:center;
+  color:var(--white);
+  padding:2rem;
+}
+span{
+  opacity:0;
+  padding:1rem;
+  transition-duration:0.5s
+}
+.project-tile a:hover span{
+  opacity:1;
+}
+
+.project-footer{
+  margin-top:8rem;
+  text-align:center;
+}
+.project-footer a{
+  text-align:center;
+  text-decoration:none;
+  font-size:2rem;
+  background-color:var(--gray);
+  color:var(--white);
+  padding:1rem 2rem;
+  transition-duration:0.6s;
+  
+}
+.project-footer a:hover{
+  background-color:var(--red);
+}
+
+/*projects */
+
+/*about me */
+#about_me{
+  display:flex;
+  flex-direction:column;
+  width:100vw;
+  height:85vh;
+  align-items:center;
+  justify-content:center;
+  background-color:var(--gray)
+}
+#about_me h1{
+  text-align:center;
+  font-size:6rem;
+  color:var(--white);
+}
+#about_me p{
+  text-align:center;
+  font-size:1.8rem;
+  color:var(--white);
+  font-style:italic;
+  margin-top:1rem;
+  margin-bottom:4rem;
+}
+.links{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:1.3rem;
+}
+.links a{
+  font-size:2.2rem;
+  text-decoration:none;
+  color:var(--white);
+  transition-duration:0.5s;
+}
+.links a:hover{
+  transform: translateY(1rem);
+}
+.links i{
+  padding:0 0.7rem;
+}
+
+
+/*about me*/
+
+/*footer */
+footer{
+  width:100vw;
+  background-color:var(--blue);
+  height:5rem;
+  position:absolute;
+  bottom:end;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  align-items:center;
+}
+footer div{
+  margin-right:7rem;
+  margin-left:7rem;
+  font-size:1.8rem;
+  color:var(--white);
+
+}
+footer a{
+  text-decoration:none;
+  color:var(--white);
+
+}
+
+/*footer */
+
+/* media */
+@media(max-width:1200px) {
+  .project-grid{
+  display:grid;
+  grid-template-columns:min-content min-content;
+  margin:0 auto;
+  }
+  img{
+    width:30rem;
+    height:30rem;
+  }
+}
+
+@media(max-width:700px) {
+  #welcome-section h1{
+  font-size:5rem;
+  }
+  #welcome-section p{
+  font-size:2.5rem;
+  color:var(--red);
+  font-style:italic;
+  }
+
+  .project-grid{
+  display:grid;
+  grid-template-columns:min-content;
+  justify-content:center;
+  margin:0 auto;
+  }
+  img{
+    width:30rem;
+    height:30rem;
+  }
+  .projects-header{
+  font-size:3rem;
+  margin:0 auto;
+  padding-top:7rem;
+  margin-bottom:5rem;
+  text-align:center;
+  border-bottom:var(--white) 0.3rem solid;
+  color:var(--white);
+  width:40rem;
+}
+  .project-tile p{
+  font-size:2rem;
+  color:var(--white);
+  padding:1rem;
+}
+}
